@@ -1,0 +1,19 @@
+﻿
+Function GetConstantValue(ConstantName) Export
+	
+	Return Constants[ConstantName].Get();
+	
+EndFunction
+
+Procedure SetConstantValue(ConstantName, Value) Export
+	
+	Constants[ConstantName].Set(Value);
+	
+EndProcedure
+
+Function Encode(String) Export
+	
+	Return EncodeString(String, StringEncodingMethod.URLEncoding);
+	
+EndFunction
+
