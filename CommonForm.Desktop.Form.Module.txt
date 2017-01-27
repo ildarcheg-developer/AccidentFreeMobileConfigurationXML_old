@@ -125,30 +125,43 @@ EndFunction
 &AtClient
 Procedure Submit(Command)
 	
-	Result = SubmitAtServer(Number);
-	
-	Items.GroupVertical.Visible = False;
-	Items.GroupVerticalResult.Visible = True;
-	Items.GroupDetailsResult.Visible = False;
-	
-	If ValueIsFilled(Result.Error) Then
+	If HTTPServices.InternetAccess() Then
 		
-		Error = Result.Error;
-		Items.Error.Visible = True;
-		AccidentArray = New Array;
-		Items.Status.Visible = False;
+		Result = SubmitAtServer(Number);
+		
+		Items.GroupVertical.Visible = False;
+		Items.GroupVerticalResult.Visible = True;
+		Items.GroupDetailsResult.Visible = False;
+		
+		Items.ErrorSubmit.Visible = False;
+
+		If ValueIsFilled(Result.Error) Then
+			
+			Error = Result.Error;
+			Items.ErrorSubmit.Visible = True;
+			AccidentArray = New Array;
+			Items.Status.Visible = False;
+			
+		Else
+			
+			Error = "";
+			Items.ErrorSubmit.Visible = False;
+			AccidentArray = GetShortHistory();
+			Items.Status.Visible = True;
+			
+		EndIf;
 		
 	Else
 		
-		Error = "";
-		Items.Error.Visible = False;
-		AccidentArray = GetShortHistory();
-		Items.Status.Visible = True;
+		Error = S.P("No Internet connection", "Нет доступа к Интернету", "لا اتصال إنترنت");
+		Items.ErrorSubmit.Visible = True;
+		AccidentArray = New Array;
+		Items.Status.Visible = False;
 		
 	EndIf;
 	
 	NumberOfAccident = AccidentArray.Count();
-		
+	
 	Status = S.P("*Accidents: "+NumberOfAccident, "*ДТП: "+NumberOfAccident, StrReplace("الحوادث: 5557*", "5557", Format(NumberOfAccident, "L=ar; ND=10")));
 	
 	N = 1;
@@ -187,6 +200,8 @@ Procedure OnCreateAtServer(Cancel, StandardProcessing)
 	Items.GroupVertical.Visible = True;
 	Items.GroupVerticalResult.Visible = False;
 	Items.GroupDetailsResult.Visible = False;
+	
+	Items.ErrorSubmit.Visible = False;
 	
 EndProcedure    
 

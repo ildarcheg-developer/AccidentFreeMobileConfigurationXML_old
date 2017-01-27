@@ -58,7 +58,7 @@ Function GetAddress() Export
 		SecureConnection = New OpenSSLSecureConnection();
 		Connection = New HTTPConnection("www.mob1c.ru", , , , , , SecureConnection);
 		Request = New HTTPRequest();
-		Request.Headers.Insert("ServerType", "AF");
+		Request.Headers.Insert("ServerType", "AFP");
 		Response = Connection.CallHTTPMethod("OPTIONS", Request);
 		ServerProduction = Response.Headers.Get("serverAF");
 
@@ -84,11 +84,17 @@ EndFunction
 Function SetConnectionStructure() Export
 	
 	If Not GetAddress() Then
-				
-		Constants.ServerExchangeAddress.Set("www.mob1c.ru");
-		Constants.ServerExchangeBase.Set("afmain");
-		Constants.ServerExchangeUseSSL.Set(True);
-		Constants.ServerExchangeHTTPPath.Set("/hs/history");
+		
+		If NOT ValueIsFilled(Constants.ServerExchangeAddress.Get("www.mob1c.pw"))
+			OR  NOT ValueIsFilled(Constants.ServerExchangeAddress.Get("accidentfree"))
+			OR  NOT ValueIsFilled(Constants.ServerExchangeAddress.Get("hs/history")) Then
+			
+			Constants.ServerExchangeAddress.Set("www.mob1c.pw");
+			Constants.ServerExchangeBase.Set("accidentfree");
+			Constants.ServerExchangeUseSSL.Set(True);
+			Constants.ServerExchangeHTTPPath.Set("/hs/history");
+			
+		EndIf;
 		
 	EndIf;
 	

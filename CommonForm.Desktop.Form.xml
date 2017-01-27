@@ -54,6 +54,15 @@
 		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
 	</Events>
 	<ChildItems>
+		<LabelField name="ErrorSubmit" id="120">
+			<DataPath>Error</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<TitleLocation>None</TitleLocation>
+			<HorizontalAlign>Center</HorizontalAlign>
+			<TextColor>style:SpecialTextColor</TextColor>
+			<ContextMenu name="ErrorSubmitContextMenu" id="121"/>
+			<ExtendedTooltip name="ErrorSubmitExtendedTooltip" id="122"/>
+		</LabelField>
 		<UsualGroup name="GroupVertical" id="1">
 			<Title>
 				<v8:item>
@@ -322,14 +331,6 @@
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="GroupHorizontal5ExtendedTooltip" id="83"/>
 					<ChildItems>
-						<LabelField name="Error" id="120">
-							<DataPath>Error</DataPath>
-							<ReadOnly>true</ReadOnly>
-							<TitleLocation>None</TitleLocation>
-							<HorizontalAlign>Center</HorizontalAlign>
-							<ContextMenu name="ErrorContextMenu" id="121"/>
-							<ExtendedTooltip name="ErrorExtendedTooltip" id="122"/>
-						</LabelField>
 						<LabelField name="Text1" id="93">
 							<DataPath>Text1</DataPath>
 							<TitleLocation>None</TitleLocation>
@@ -809,7 +810,11 @@
 				</v8:item>
 			</Title>
 			<Type>
-				<v8:Type>v8ui:FormattedString</v8:Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
 		<Attribute name="TestA" id="13">
