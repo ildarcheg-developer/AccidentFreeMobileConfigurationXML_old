@@ -58,7 +58,11 @@ Function GetAddress() Export
 		SecureConnection = New OpenSSLSecureConnection();
 		Connection = New HTTPConnection("www.mob1c.ru", , , , , , SecureConnection);
 		Request = New HTTPRequest();
-		Request.Headers.Insert("ServerType", "AFP");
+		ServerType = "AFP";
+		
+		If T.T() Then ServerType = "AF" EndIf;
+		
+		Request.Headers.Insert("ServerType", ServerType);
 		Response = Connection.CallHTTPMethod("OPTIONS", Request);
 		ServerProduction = Response.Headers.Get("serverAF");
 

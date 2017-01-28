@@ -1,0 +1,13 @@
+﻿Function IsTestMode() Export
+	
+	If Find(Metadata.Synonym, "-TEST-") > 0 Then
+		
+		Return TRUE;
+		
+	Else
+		
+		Return False;
+		
+	EndIf;
+	
+EndFunction 
