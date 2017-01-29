@@ -115,7 +115,6 @@
 							<HorizontalAlign>Center</HorizontalAlign>
 							<TextColor>#C8C8C8</TextColor>
 							<Font ref="style:NormalTextFont" height="11" kind="StyleItem" scale="100"/>
-							<AutoCapitalizationOnTextInput>AllCharacters</AutoCapitalizationOnTextInput>
 							<InputHint>
 								<v8:item>
 									<v8:lang>en</v8:lang>
@@ -257,7 +256,6 @@
 							<ReadOnly>true</ReadOnly>
 							<TitleLocation>None</TitleLocation>
 							<HorizontalAlign>Center</HorizontalAlign>
-							<TextColor>#C8C8C8</TextColor>
 							<Font ref="style:NormalTextFont" height="11" kind="StyleItem" scale="100"/>
 							<ContextMenu name="Number2ContextMenu" id="65"/>
 							<ExtendedTooltip name="Number2ExtendedTooltip" id="66"/>
@@ -269,7 +267,7 @@
 						</LabelDecoration>
 					</ChildItems>
 				</UsualGroup>
-				<UsualGroup name="GroupStatus" id="40">
+				<UsualGroup name="GroupHorizontal2" id="40">
 					<Title>
 						<v8:item>
 							<v8:lang>en</v8:lang>
@@ -285,13 +283,19 @@
 					<Group>Horizontal</Group>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="GroupStatusExtendedTooltip" id="41"/>
+					<ExtendedTooltip name="GroupHorizontal2ExtendedTooltip" id="41"/>
 					<ChildItems>
 						<LabelDecoration name="Decoration8" id="42">
 							<HorizontalStretch>true</HorizontalStretch>
 							<ContextMenu name="Decoration8ContextMenu" id="43"/>
 							<ExtendedTooltip name="Decoration8ExtendedTooltip" id="44"/>
 						</LabelDecoration>
+						<InputField name="status1" id="125">
+							<DataPath>status1</DataPath>
+							<Visible>false</Visible>
+							<ContextMenu name="status1ContextMenu" id="126"/>
+							<ExtendedTooltip name="status1ExtendedTooltip" id="127"/>
+						</InputField>
 						<LabelField name="Status" id="45">
 							<DataPath>Status</DataPath>
 							<ReadOnly>true</ReadOnly>

@@ -1,0 +1,7 @@
+fileName <- "Configuration.xml"
+codeLines <- readLines(fileName, encoding = "UTF-8", warn = FALSE)
+codeLines <- gsub(" -TEST-", "", codeLines)
+codeLines <- gsub("-TEST-", "", codeLines)
+writeLines(codeLines, fileName, useBytes = TRUE)
+print("-TEST- is removed")
+Sys.sleep(3)
