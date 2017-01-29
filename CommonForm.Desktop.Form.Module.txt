@@ -175,20 +175,20 @@ Procedure Submit(Command)
 		
 		Error = Result.Error;
 		Items.ErrorSubmit.Visible = True;
-		Items.GroupStatus.Visible = False;
+		Items.Status.Visible = False;
 		
 	Else
 		
 		Error = "";
 		Items.ErrorSubmit.Visible = False;
 		AccidentArray = GetShortHistory();
-		Items.GroupStatus.Visible = True;
+		Items.Status.Visible = True;
 		
 	EndIf;
 	
 	NumberOfAccident = AccidentArray.Count();
 	
-	Status = S.P("Accidents: "+NumberOfAccident+"*", "ДТП: "+NumberOfAccident+"*", StrReplace("الحوادث: 5557*", "5557", Format(NumberOfAccident, "L=ar; ND=10")));
+	Status = S.P("*Accidents: "+NumberOfAccident, "*ДТП: "+NumberOfAccident, StrReplace("الحوادث: 5557*", "5557", Format(NumberOfAccident, "L=ar; ND=10")));
 	
 	N = 1;
 	Text1 = ?(N<=NumberOfAccident, AccidentArray[N-1], "");
