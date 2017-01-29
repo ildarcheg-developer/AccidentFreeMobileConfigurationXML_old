@@ -53,7 +53,7 @@
 			<ScriptVariant>English</ScriptVariant>
 			<DefaultRoles/>
 			<Vendor>Ildar Gabdrakhmanov</Vendor>
-			<Version>1.1.4</Version>
+			<Version>1.1.5</Version>
 			<UpdateCatalogAddress/>
 			<IncludeHelpInContents>false</IncludeHelpInContents>
 			<UseManagedFormInOrdinaryApplication>false</UseManagedFormInOrdinaryApplication>
@@ -105,7 +105,7 @@
 				</v8:pair>
 				<v8:pair>
 					<v8:Key xsi:type="app:RequiredMobileApplicationPermissions">InAppPurchases</v8:Key>
-					<v8:Value xsi:type="xs:boolean">false</v8:Value>
+					<v8:Value xsi:type="xs:boolean">true</v8:Value>
 				</v8:pair>
 			</RequiredMobileApplicationPermissions>
 			<DefaultInterface/>
@@ -170,6 +170,7 @@
 			<Constant>ServerExchangeBase</Constant>
 			<Constant>ServerExchangeHTTPPath</Constant>
 			<Constant>ServerExchangeUseSSL</Constant>
+			<Constant>Purchased</Constant>
 			<CommonForm>Desktop</CommonForm>
 		</ChildObjects>
 	</Configuration>

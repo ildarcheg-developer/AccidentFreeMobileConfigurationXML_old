@@ -1,7 +1,21 @@
 ﻿Function Purchased() Export
-	
-	//test comment
-	// second test comment
-	Return False;
+		
+	Return CommonUseServerCall.GetConstantValue("Purchased");
 	
 EndFunction
+
+Procedure InitializePurchases() Export
+	
+	
+	If InAppPurchases.PurchasesSupported() Then
+		
+		CommonUseServerCall.SetConstantValue("Purchased", False);
+		
+	Else
+		
+		CommonUseServerCall.SetConstantValue("Purchased", False);
+		
+	EndIf;
+	
+		
+EndProcedure
