@@ -1,0 +1,5 @@
+﻿Function Purchased() Export
+	
+	Return False;
+	
+EndFunction

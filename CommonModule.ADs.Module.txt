@@ -1,0 +1,13 @@
+﻿Procedure SetUpADs() Export
+	
+	If Not Store.Purchased() Then
+		
+		ADID = "ca-app-pub-9478804610114979/2274430240";
+		
+		AdRepresentation.SetUsing(True);	
+		AdRepresentation.SetAdBannerID(ADID);
+		AdRepresentation.SetAdBannerRepresentation(AdBannerRepresentation.Top);
+		
+	EndIf;
+	
+EndProcedure

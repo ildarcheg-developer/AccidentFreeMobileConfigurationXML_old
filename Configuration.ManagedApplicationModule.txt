@@ -1,4 +1,8 @@
 ﻿
 Procedure OnStart()
+	
+	ADs.SetUpADs();
+	
 	OpenForm("CommonForm.Desktop");
+	
 EndProcedure
