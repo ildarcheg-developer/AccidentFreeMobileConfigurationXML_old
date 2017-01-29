@@ -1,6 +1,7 @@
 ﻿Function Purchased() Export
 	
 	//test comment
+	// second test comment
 	Return False;
 	
 EndFunction
